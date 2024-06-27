@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { RegisterUser } from './services/register.service';
 import { LoginUser } from './services/login-service';
+import { AuthMiddleware } from './middlewares/auth.middleware';
 
 dotenv.config();
 mongoose
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.post('/auth/register', RegisterUser);
 app.post('/auth/login', LoginUser);
+app.get('/user', AuthMiddleware, LoginUser);
 
 app.listen(process.env.PORT, () => {
   console.log(`User Service Listening on PORT ${process.env.PORT}`);
