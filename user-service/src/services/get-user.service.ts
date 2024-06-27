@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import { MapUser } from '../mapper/user.mapper';
 import { User } from '../interfaces/user.interface';
 
