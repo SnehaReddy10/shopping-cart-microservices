@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import { RegisterUser } from './services/register.service';
 
 dotenv.config();
 mongoose
@@ -13,10 +14,9 @@ mongoose
   });
 
 const app = express();
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('User Servcie is healthy');
-});
+app.post('/auth/register', RegisterUser);
 
 app.listen(process.env.PORT, () => {
   console.log(`User Service Listening on PORT ${process.env.PORT}`);
