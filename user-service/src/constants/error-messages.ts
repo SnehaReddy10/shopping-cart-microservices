@@ -7,4 +7,7 @@ export const USER = {
   USER_ALREADY_EXISTS: 'User Already Exists',
   PASSWORD_SHOULD_MATCH: `Passwords don't match`,
   USER_REGISTRATION_FAILED: 'An error occurred while registering the user',
+  USER_NOT_FOUND: 'User Not Found',
+  INVALID_CREDENTIALS: 'Invalid Credentials',
+  USER_SIGNIN_FAILED: 'An error occurred while signing in',
 };
