@@ -1,9 +1,8 @@
 import { Request, Response } from 'express';
+import { MapUser } from '../mapper/user.mapper';
+import { User } from '../interfaces/user.interface';
 
-class UserRequest extends Request {
-  user: any;
-}
-
-export const GetUser = async (req: UserRequest, res: Response) => {
-  return req.user;
+export const GetUser = async (req: any, res: Response) => {
+  const mappedUser: User = MapUser(req.user);
+  return res.json({ user: mappedUser });
 };
